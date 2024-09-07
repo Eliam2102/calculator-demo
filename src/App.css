@@ -1,42 +1,91 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Calculator.css */
+
+body {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.calculator{
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
+  grid-gap: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #373a40;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.display{
+  grid-column:  span 4;
+  background-color: #686d76;
+  color: white;
+  padding: 20px;
+  text-align: right;
+  font-size: 2em;
+  border-radius: 8px 8px 0 0;
+}
+
+button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.45em;
+}
+ 
+button:hover{
+  background-color: #555;
+  border-color: #000;
+}
+
+button.operator{
+  background-color: #e88d67;
+  color: #eeeeee;
+}
+
+button.operator:hover{
+  background-color: #686d76;
+  border-color: #373a40;
+}
+
+
+
+/* Responsividad */
+
+@media(max-width: 768px){
+  .calculator{
+    max-width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+  button{
+    font-size: 1em;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media(max-width: 480px){
+  .calculator{
+    max-width: 10px;
+  }
+  button{
+    font-size: 10px;
   }
 }
 
-.card {
-  padding: 2em;
-}
 
-.read-the-docs {
-  color: #888;
-}
+
+
+
+
+
+
+
